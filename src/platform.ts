@@ -1,6 +1,6 @@
 import {API, Characteristic, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, Service} from 'homebridge'
 
-import {PLATFORM_NAME} from './settings'
+import {PLATFORM_NAME, PLUGIN_NAME} from './settings'
 import {DockerPlatformAccessory} from './platformAccessory'
 
 import Docker from 'dockerode'
@@ -63,7 +63,7 @@ export class DockerHomebridgePlatform implements DynamicPlatformPlugin {
           accessory.context.device.Name = name
 
           new DockerPlatformAccessory(this, accessory)
-          this.api.registerPlatformAccessories(PLATFORM_NAME, PLATFORM_NAME, [accessory])
+          this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory])
         }
       })
     })
