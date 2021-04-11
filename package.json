@@ -6,10 +6,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kpostekk/homebridge-plugin-docker.git"
+    "url": "git://github.com/kpostekk/homebridge-docker.git"
   },
   "bugs": {
-    "url": "https://github.com/kpostekk/homebridge-plugin-docker/issues"
+    "url": "https://github.com/kpostekk/homebridge-docker/issues"
   },
   "engines": {
     "node": ">=10.17.0",
