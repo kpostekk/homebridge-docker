@@ -5,11 +5,11 @@
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
+      "host": {
         "title": "Host",
         "type": "string",
         "required": true,
-        "placeholder": "192.168.1.100"
+        "placeholder": "http://192.168.1.100"
       },
       "port": {
         "title": "Port",
