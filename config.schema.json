@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "homebridge-docker",
+  "pluginAlias": "Docker",
   "pluginType": "platform",
   "singular": true,
   "schema": {
