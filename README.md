@@ -22,5 +22,4 @@ Certificate auth is not supported, yet.
 
 ## Usage
 
-<img src="https://raw.githubusercontent.com/kpostekk/homebridge-docker/main/.github/21-04-11%2017-37-49%201563.png" height="370">
-<img src="https://raw.githubusercontent.com/kpostekk/homebridge-docker/main/.github/21-04-11%2017-38-00%201564.png" height="370">
+<img src="https://raw.githubusercontent.com/kpostekk/homebridge-docker/main/.github/21-04-11%2017-37-49%201563.png" height="370"><img src="https://raw.githubusercontent.com/kpostekk/homebridge-docker/main/.github/21-04-11%2017-38-00%201564.png" height="370">
