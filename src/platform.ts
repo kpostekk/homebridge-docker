@@ -21,7 +21,21 @@ export class DockerHomebridgePlatform implements DynamicPlatformPlugin {
     public readonly api: API,
   ) {
     this.log.info('Creating Docker API object', this.config.host)
-    this.docker = new Docker({host: this.config.host, port: this.config.port})
+    if (this.config.ca && this.config.cert && this.config.key) {
+      this.docker = new Docker({
+        host: this.config.host,
+        port: this.config.port,
+        ca: Buffer.from(this.config.ca, 'base64'),
+        cert: Buffer.from(this.config.cert, 'base64'),
+        key: Buffer.from(this.config.key, 'base64'),
+      })
+    } else {
+      this.docker = new Docker({
+        host: this.config.host,
+        port: this.config.port,
+      })
+    }
+
 
     this.api.on('didFinishLaunching', () => {
       this.log.info(`Finished initializing Docker@${this.config.host} platform`)

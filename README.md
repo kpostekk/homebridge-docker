@@ -18,7 +18,10 @@ sudo npm i -g homebridge-docker
 }
 ```
 
-Certificate auth is not supported, yet.
+### Authentication
+
+To authenticate with certs, encode them with base64 and pass them to config.
+You can use `base64` to encode them.
 
 ## Usage
 
