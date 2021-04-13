@@ -22,7 +22,7 @@ export class DockerPlatformAccessory {
     this.log = this.platform.log
 
     // read secure delay settings
-    if (this.platform.config.SecureDelayTimeout > 0) {
+    if (this.platform.config.secureDelayTimeout > 0) {
       this.secureDelayTimeout = this.platform.config.secureDelayTimeout
     }
 
