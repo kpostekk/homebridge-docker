@@ -1,10 +1,11 @@
-import {CharacteristicValue, PlatformAccessory, Service} from 'homebridge'
+import {CharacteristicValue, Logger, PlatformAccessory, Service} from 'homebridge'
 
 import {DockerHomebridgePlatform} from './platform'
 
 
 export class DockerPlatformAccessory {
   private service: Service
+  private readonly log: Logger
 
   private states = {
     On: false,
@@ -14,6 +15,9 @@ export class DockerPlatformAccessory {
     private readonly platform: DockerHomebridgePlatform,
     private readonly accessory: PlatformAccessory,
   ) {
+    // copy logging
+    this.log = this.platform.log
+
     // set accessory information
     this.accessory.getService(this.platform.Service.AccessoryInformation)!
       .setCharacteristic(this.platform.Characteristic.Manufacturer, 'Docker')
