@@ -38,21 +38,27 @@ export class DockerPlatformAccessory {
    */
   setOn(value: CharacteristicValue) {
     if (value) {
+    if (value) { // start container
+      this.log.debug('Starting...')
       this.platform.docker.getContainer(
         this.accessory.context.device.Id,
       ).start()
         .then(() => {
-          this.states.On = true as boolean
+          this.states.On = true
         })
-    } else {
+        .catch(() => {
+          this.states.On = true
+        })
+    } else { // stop container
+      this.log.debug('Stopping...')
       this.platform.docker.getContainer(
         this.accessory.context.device.Id,
       ).stop()
         .then(() => {
-          this.states.On = false as boolean
+          this.states.On = false
         })
         .catch(() => {
-          this.states.On = false as boolean
+          this.states.On = false
         })
     }
   }
