@@ -26,6 +26,14 @@
         "required": true,
         "default": 2375,
         "placeholder": "2375"
+      },
+      "secureDelayTimeout": {
+        "title": "Timeout for miss clicks",
+        "type": "integer",
+        "required": true,
+        "default": 0,
+        "placeholder": "5000",
+        "description": "Time window for miss clicks in milliseconds, 0 and lower values disable this experimental feature."
       }
     }
   }
