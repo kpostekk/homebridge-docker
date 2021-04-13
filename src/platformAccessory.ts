@@ -24,7 +24,7 @@ export class DockerPlatformAccessory {
       .setCharacteristic(this.platform.Characteristic.Model, this.accessory.context.device.Image.substr(0, 24))
       .setCharacteristic(this.platform.Characteristic.SerialNumber, String(this.accessory.context.device.Id).substr(0, 16))
 
-    // set Switch service
+    // set switch service
     this.service = this.accessory.getService(this.platform.Service.Switch) || this.accessory.addService(this.platform.Service.Switch)
     this.service.setCharacteristic(this.platform.Characteristic.Name, accessory.context.device.Name)
     this.service.getCharacteristic(this.platform.Characteristic.On)
