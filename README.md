@@ -2,6 +2,8 @@
 
 Integrate your precious containers with your home
 
+![npm](https://img.shields.io/npm/dm/homebridge-docker?style=flat-square)![npm](https://img.shields.io/npm/v/homebridge-docker?style=flat-square)![npm bundle size](https://img.shields.io/bundlephobia/minzip/homebridge-docker?style=flat-square)
+
 ## Install
 
 ```shell
