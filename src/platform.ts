@@ -5,6 +5,11 @@ import {DockerPlatformAccessory} from './platformAccessory'
 
 import Docker from 'dockerode'
 
+interface DockerPlatformConfig extends PlatformConfig {
+  host?: string;
+  port?: number;
+  secureDelayTimeout?: number;
+}
 
 export class DockerHomebridgePlatform implements DynamicPlatformPlugin {
   public readonly Service: typeof Service = this.api.hap.Service
@@ -13,6 +18,7 @@ export class DockerHomebridgePlatform implements DynamicPlatformPlugin {
   // this is used to track restored cached accessories
   public readonly accessories: PlatformAccessory[] = []
 
+  public readonly dockerConfig: DockerPlatformConfig
   public readonly docker: Docker
 
   constructor(
@@ -20,8 +26,18 @@ export class DockerHomebridgePlatform implements DynamicPlatformPlugin {
     public readonly config: PlatformConfig,
     public readonly api: API,
   ) {
-    this.log.info('Creating Docker API object', this.config.host)
-    this.docker = new Docker({host: this.config.host, port: this.config.port})
+    this.dockerConfig = config
+
+    this.log.info('Creating Docker API object', this.dockerConfig.host!)
+    if (this.dockerConfig.host!.startsWith('unix://')) {
+      this.docker = new Docker(
+        {socketPath: this.dockerConfig.host!},
+      )
+    } else {
+      this.docker = new Docker(
+        {host: this.dockerConfig.host!, port: this.config.port!},
+      )
+    }
 
     this.api.on('didFinishLaunching', () => {
       this.log.info(`Finished initializing Docker@${this.config.host} platform`)

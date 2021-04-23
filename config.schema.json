@@ -9,12 +9,13 @@
         "title": "Host",
         "type": "string",
         "required": true,
-        "placeholder": "http://192.168.1.100",
+        "placeholder": "http://192.168.1.100 or unix:///var/run/docker.sock",
         "typeahead": {
           "source": [
             "http://192.168.1.",
             "http://127.0.0.1",
-            "http://localhost"
+            "http://localhost",
+            "unix:///var/run/docker.sock"
           ]
         },
         "description": "Address of Docker host.",
@@ -23,17 +24,16 @@
       "port": {
         "title": "Port",
         "type": "integer",
-        "required": true,
-        "default": 2375,
-        "placeholder": "2375"
+        "required": false,
+        "placeholder": "2375",
+        "description": "Leave it empty if are you planning to use linux socket."
       },
       "secureDelayTimeout": {
         "title": "Timeout for miss clicks",
         "type": "integer",
-        "required": true,
-        "default": 0,
+        "required": false,
         "placeholder": "5000",
-        "description": "Time window for miss clicks in milliseconds, 0 and lower values disable this experimental feature."
+        "description": "Time window for miss clicks in milliseconds. Leave empty to disable this feature."
       }
     }
   }
