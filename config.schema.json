@@ -34,6 +34,27 @@
         "required": false,
         "placeholder": "5000",
         "description": "Time window for miss clicks in milliseconds. Leave empty to disable this feature."
+      },
+      "ca": {
+        "title": "CA",
+        "type": "string",
+        "required": false,
+        "placeholder": "UHJvYmFibHkgQ2EgY2VydCB3aG8gY2FyZXMK",
+        "description": "Base64 encoded CA cert file. (experimental)"
+      },
+      "cert": {
+        "title": "Cert",
+        "type": "string",
+        "required": false,
+        "placeholder": "UHV0IGhlcmUgdGhlIGNlcnQgZmlsZSBpZGsgaSdtIG5vdCBhIHNlY3VyaXR5IHNwZWNpYWxpc3QK",
+        "description": "Base64 encoded cert file. (experimental)"
+      },
+      "key": {
+        "title": "Cert key",
+        "type": "string",
+        "required": false,
+        "placeholder": "d2hhdCB0aGUgaGVjayBpcyBhIGtleSBjZXJ0LCBpZGssIGhhdmUgZnVuCg==",
+        "description": "Base64 encoded cert key. (experimental)"
       }
     }
   }
