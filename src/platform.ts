@@ -9,6 +9,9 @@ interface DockerPlatformConfig extends PlatformConfig {
   host?: string;
   port?: number;
   secureDelayTimeout?: number;
+  ca?: string;
+  cert?: string;
+  key?: string;
 }
 
 export class DockerHomebridgePlatform implements DynamicPlatformPlugin {
@@ -35,7 +38,13 @@ export class DockerHomebridgePlatform implements DynamicPlatformPlugin {
       )
     } else {
       this.docker = new Docker(
-        {host: this.dockerConfig.host!, port: this.config.port!},
+        {
+          host: this.dockerConfig.host!,
+          port: this.config.port!,
+          ca: this.dockerConfig.ca ? Buffer.from(this.dockerConfig.ca!, 'base64') : undefined,
+          cert: this.dockerConfig.cert ? Buffer.from(this.dockerConfig.cert!, 'base64') : undefined,
+          key: this.dockerConfig.key ? Buffer.from(this.dockerConfig.key!, 'base64') : undefined,
+        },
       )
     }
 
