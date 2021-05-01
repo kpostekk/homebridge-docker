@@ -1,7 +1,7 @@
 {
   "displayName": "Docker",
   "name": "homebridge-docker",
-  "version": "2021.5.1",
+  "version": "2021.6.0",
   "description": "Manage your containers like switches.",
   "license": "Apache-2.0",
   "repository": {
