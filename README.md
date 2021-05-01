@@ -2,7 +2,7 @@
 
 Integrate your precious containers with your home
 
-![npm](https://img.shields.io/npm/dm/homebridge-docker?style=flat-square)![npm](https://img.shields.io/npm/v/homebridge-docker?style=flat-square)![npm bundle size](https://img.shields.io/bundlephobia/minzip/homebridge-docker?style=flat-square)
+![npm](https://img.shields.io/npm/dm/homebridge-docker?style=flat-square) ![npm](https://img.shields.io/npm/v/homebridge-docker?style=flat-square) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/homebridge-docker?style=flat-square)
 
 ## Install
 
@@ -12,18 +12,19 @@ sudo npm i -g homebridge-docker
 
 ## Configuration
 
-```json
-{
-  "host": "http://192.168.1.91", 
-  "port": 2375, 
-  "platform": "Docker"
-}
-```
+#### Host
+Can be unix socket or http address.
 
-### Authentication
+#### Port
+Specify port for http connection (not required for unix socket).
+
+#### Secure delay timeout *(experimental)*
+
+Feature to prevent miss clicks, probably not working.
+
+### Authentication *(experimental)*
 
 To authenticate with certs, encode them with base64 and pass them to config.
-You can use `base64` to encode them.
 
 ## Usage
 
